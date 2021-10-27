@@ -7,7 +7,21 @@
 <script>
   export default {
     name: "Note",
-    props: ["note"]
+    props: ["note"],
+    watch: {
+      note: {
+        handler() {
+          console.log("wrote")
+          localStorage.setItem('note', this.note)
+        },
+        deep: true
+      }
+    },
+    mounted() {
+      if (localStorage.getItem("note")) {
+        this.note = localStorage.getItem("note")
+      }
+    }
   }
 </script>
 
