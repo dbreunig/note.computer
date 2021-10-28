@@ -34,7 +34,7 @@ textarea {
   height: 100%;
   background-color: white;
   border: none;
-  padding: 1em;
+  padding-top: 1em;
   font-family: Tahoma, sans-serif;
   outline: none;
   resize: none;
