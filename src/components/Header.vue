@@ -10,21 +10,15 @@
 </template>
 
 <script>
+  import { saveAs } from 'file-saver';
   export default {
     name: "Header",
     methods: {
       download: function() {
         if (localStorage.getItem("note")) {
           var note = localStorage.getItem("note")
-
-          var element = document.createElement('a');
-          element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(note));
-          element.setAttribute('download', "note-computer.txt");
-          element.style.display = 'none';
-          document.body.appendChild(element);
-          element.click();
-          
-          document.body.removeChild(element);
+          var blob = new Blob([note], {type: "text/plain;charset=utf-8"});
+          saveAs(blob, "note-computer.txt");
         }
       }
     }
