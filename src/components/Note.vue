@@ -33,8 +33,8 @@ textarea {
   width: 100%;
   height: 100%;
   background-color: white;
-  border: 1px solid #888;
-  padding: 5px;
+  border: none;
+  padding: 1em;
   font-family: Tahoma, sans-serif;
   outline: none;
   resize: none;
