@@ -14,4 +14,7 @@
 #footer {
   flex: 0 1 40px;
 }
+p {
+  text-align: center;
+}
 </style>

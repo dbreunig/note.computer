@@ -2,6 +2,7 @@
   <div class="container-fluid" id="header">
     <div class="container" id="tool-bar">
     <a class="action-icon" href="#" v-on:click="download"><b-icon class="nav-icon" icon="download"></b-icon></a>
+    <a class="action-icon" href="#" v-on:click="clear"><b-icon class="nav-icon" icon="x-circle"></b-icon></a>
     <!-- <a class="action-icon" href="#"><b-icon class="nav-icon" icon="printer"></b-icon></a> -->
     <!-- <a class="action-icon" href="#"><b-icon class="nav-icon" icon="gear"></b-icon></a> -->
     <!-- <a class="action-icon" href="#"><b-icon class="nav-icon" icon="info"></b-icon></a> -->
@@ -20,6 +21,10 @@
           var blob = new Blob([note], {type: "text/plain;charset=utf-8"});
           saveAs(blob, "note-computer.txt");
         }
+      },
+      clear: function() {
+        localStorage.setItem('note', "");
+        location.reload();
       }
     }
   }

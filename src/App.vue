@@ -2,21 +2,21 @@
   <div id="app">
     <Header />
     <Note v-bind:note="note"/>
-    <!-- <Footer /> -->
+    <Footer />
   </div>
 </template>
 
 <script>
 import Note from "./components/Note";
 import Header from "./components/Header";
-// import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 
 export default {
   name: 'App',
   components: {
     Note,
     Header,
-    // Footer
+    Footer
   },
   data () {
     return {

@@ -1,5 +1,5 @@
 <template>
-  <div class="container" id="note">
+  <div class="container-fluid" id="note">
     <textarea class="col-12" v-model="note" placeholder="Start typing..."></textarea>
   </div>
 </template>
@@ -11,7 +11,6 @@
     watch: {
       note: {
         handler() {
-          console.log("wrote")
           localStorage.setItem('note', this.note)
         },
         deep: true
@@ -19,7 +18,7 @@
     },
     mounted() {
       if (localStorage.getItem("note")) {
-        this.note = localStorage.getItem("note")
+        this.note = localStorage.getItem("note");
       }
     }
   }
@@ -35,8 +34,16 @@ textarea {
   background-color: white;
   border: none;
   padding-top: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 2em;
   font-family: Tahoma, sans-serif;
   outline: none;
   resize: none;
+
+}
+.container-fluid {
+  padding-left: 0px;
+  padding-right: 0px
 }
 </style>

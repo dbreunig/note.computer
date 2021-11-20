@@ -1,24 +1,8 @@
 # note-computer
 
-## Project setup
-```
-npm install
-```
+A simple Vue app for disposable note taking, hosted at [note.computer](note.computer). Notes taken on this site are saved to your local storage. No data leaves your machine.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## To-Do
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- Markdown support
+- Print-specific CSS
