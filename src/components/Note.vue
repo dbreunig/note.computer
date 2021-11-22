@@ -1,27 +1,29 @@
 <template>
   <div class="container-fluid" id="note">
-    <textarea class="col-12" v-model="note" placeholder="Start typing..."></textarea>
+    <textarea class="col-12" :value="notex" @input="updateNotex" placeholder="Start typing..."></textarea>
   </div>
 </template>
 
 <script>
-  export default {
-    name: "Note",
-    props: ["note"],
-    watch: {
-      note: {
-        handler() {
-          localStorage.setItem('note', this.note)
-        },
-        deep: true
-      }
-    },
-    mounted() {
-      if (localStorage.getItem("note")) {
-        this.note = localStorage.getItem("note");
-      }
+export default {
+  name: "Note",
+  computed: {
+    notex() {
+      return this.$store.state.notex
+    }
+  },
+  methods: {
+    updateNotex(event) {
+      this.$store.commit('update', event.target.value)
+      localStorage.setItem('note', this.$store.state.notex);
+    }
+  },
+  mounted() {
+    if (localStorage.getItem("note")) {
+      this.$store.commit('update', localStorage.getItem("note"));
     }
   }
+}
 </script>
 
 <style scoped>

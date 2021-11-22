@@ -1,0 +1,5 @@
+Hi everyone,
+
+This is a simple app for jotting down quick notes to yourself for reference. 
+
+- @dbreunig

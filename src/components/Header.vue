@@ -24,7 +24,7 @@
       },
       clear: function() {
         localStorage.setItem('note', "");
-        location.reload();
+        this.$store.commit('update', "");
       }
     }
   }

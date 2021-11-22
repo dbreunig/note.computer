@@ -6,4 +6,3 @@ A simple Vue app for disposable note taking, hosted at note.computer. Notes take
 
 - Markdown support
 - Print-specific CSS
-- vuex support for reload-less clearing and other functions
