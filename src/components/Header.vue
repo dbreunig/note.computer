@@ -3,10 +3,14 @@
     <div class="container" id="tool-bar">
     <a class="action-icon" href="#" v-on:click="download"><b-icon class="nav-icon" icon="download"></b-icon></a>
     <a class="action-icon" href="#" v-on:click="clear"><b-icon class="nav-icon" icon="x-circle"></b-icon></a>
+    <!-- <a class="action-icon" href="#" v-on:click="info"><b-icon class="nav-icon" icon="info"></b-icon></a> -->
     <!-- <a class="action-icon" href="#"><b-icon class="nav-icon" icon="printer"></b-icon></a> -->
     <!-- <a class="action-icon" href="#"><b-icon class="nav-icon" icon="gear"></b-icon></a> -->
     <!-- <a class="action-icon" href="#"><b-icon class="nav-icon" icon="info"></b-icon></a> -->
     </div>
+    <b-modal id="modal" size="lg" title="note.computer" hide-footer>
+
+    </b-modal>
   </div>
 </template>
 
@@ -25,6 +29,9 @@
       clear: function() {
         localStorage.setItem('note', "");
         this.$store.commit('update', "");
+      },
+      info: function() {
+        this.$bvModal.show('modal')
       }
     }
   }
@@ -50,4 +57,5 @@
 .navbar-brand {
   padding-left: 1.5em;
 }
+
 </style>
